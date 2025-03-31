@@ -1,12 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="GameBoard.cpp" />
-    <ClCompile Include="Enums.cpp" />
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>ConsoleImage</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameBoard.h" />
-    <ClInclude Include="Enums.h" />
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>ConsoleImage</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.h">
+      <Filter>Datas</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Datas</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Consts.h">
+      <Filter>Datas</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="pch">
+      <UniqueIdentifier>{6970306d-9b17-4dae-8095-e7c829549367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConsoleImage">
+      <UniqueIdentifier>{c05d59ac-a555-4d84-9bf3-e2211e82edd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Datas">
+      <UniqueIdentifier>{4245f0d7-5872-4bff-a5cb-3ea7e04efa76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{3653522e-875b-4a76-b065-fedbf1f92d84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConsoleImage\Instance">
+      <UniqueIdentifier>{cc5f169c-4ad2-48ef-8134-f22df386e02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{e39b9d73-6f41-45f6-991c-29f95fe16e17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="VIsuality.txt">
+      <Filter>Datas</Filter>
+    </Text>
   </ItemGroup>
 </Project>
