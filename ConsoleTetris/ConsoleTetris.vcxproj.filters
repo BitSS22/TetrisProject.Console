@@ -14,7 +14,10 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="RenderBoard.cpp">
-      <Filter>ConsoleImage\Instance</Filter>
+      <Filter>ConsoleImage\RenderInstance</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayBoard.cpp">
+      <Filter>ConsoleImage\RenderInstance\ChildBoard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,7 +40,10 @@
       <Filter>Datas</Filter>
     </ClInclude>
     <ClInclude Include="RenderBoard.h">
-      <Filter>ConsoleImage\Instance</Filter>
+      <Filter>ConsoleImage\RenderInstance</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayBoard.h">
+      <Filter>ConsoleImage\RenderInstance\ChildBoard</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,11 +59,14 @@
     <Filter Include="main">
       <UniqueIdentifier>{3653522e-875b-4a76-b065-fedbf1f92d84}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConsoleImage\Instance">
-      <UniqueIdentifier>{cc5f169c-4ad2-48ef-8134-f22df386e02d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{e39b9d73-6f41-45f6-991c-29f95fe16e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConsoleImage\RenderInstance">
+      <UniqueIdentifier>{cc5f169c-4ad2-48ef-8134-f22df386e02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConsoleImage\RenderInstance\ChildBoard">
+      <UniqueIdentifier>{2e7dd8fc-3fc1-46d3-bbb5-fff346fd8a99}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -5,23 +5,23 @@ class CImage
 {
 public:
 	CImage();
-	~CImage();
+	virtual ~CImage();
 
 private:
-	std::vector<std::vector<EPixel>> Image = {};
+	std::vector<std::vector<ERenderPixel>> Image = {};
 	UInt2 Size = {};
 	UInt2 LeftTop = {};
 
 public:
-	inline EPixel GetPixel(UInt2 _Pixel) const
+	inline ERenderPixel GetPixel(UInt2 _PixelLocation) const
 	{
-		return Image[_Pixel.Y][_Pixel.X];
+		return Image[_PixelLocation.Y][_PixelLocation.X];
 	}
-	inline void SetPixel(UInt2 _Pixel, EPixel _wch)
+	inline void SetPixel(UInt2 _PixelDest, ERenderPixel _PixelType)
 	{
-		Image[_Pixel.Y][_Pixel.X] = _wch;
+		Image[_PixelDest.Y][_PixelDest.X] = _PixelType;
 	}
-	UInt2 GetSize() const
+	UInt2 GetImageSize() const
 	{
 		return Size;
 	}
@@ -35,9 +35,9 @@ public:
 	}
 
 public:
-	void SetSize(UInt2 _Size, EPixel _Fill = EPixel::NONE);
-	void FillImage(EPixel _Fill = EPixel::NONE);
-	void Draw(CImage& Dest, bool _NonePixelDraw = false);
+	void SetSize(UInt2 _Size, ERenderPixel _PixelType = ERenderPixel::NONE);
+	void FillFixel(ERenderPixel _PixelType = ERenderPixel::NONE);
+	virtual void Draw(CImage& Dest, bool _NonePixelDraw = false);
 
 };
 

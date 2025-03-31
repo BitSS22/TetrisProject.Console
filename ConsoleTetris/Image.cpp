@@ -9,24 +9,24 @@ CImage::~CImage()
 {
 }
 
-void CImage::SetSize(UInt2 _Size, EPixel _Fill)
+void CImage::SetSize(UInt2 _Size, ERenderPixel _PixelType)
 {
 	Size = _Size;
 	Image.resize(Size.Y);
 
 	for (unsigned int i = 0; i < Size.Y; ++i)
 	{
-		Image[i].resize(Size.X, _Fill);
+		Image[i].resize(Size.X, _PixelType);
 	}
 }
 
-void CImage::FillImage(EPixel _Fill)
+void CImage::FillFixel(ERenderPixel _PixelType)
 {
 	for (unsigned int y = 0; y < Image.size(); ++y)
 	{
 		for (unsigned int x = 0; x < Image[y].size(); ++x)
 		{
-			SetPixel(UInt2(y, x), _Fill);
+			SetPixel(UInt2(x, y), _PixelType);
 		}
 	}
 }
@@ -37,10 +37,10 @@ void CImage::Draw(CImage& Dest, bool _NonePixelDraw)
 	{
 		for (unsigned int x = 0; x < Size.X; ++x)
 		{
-			if (_NonePixelDraw == false && GetPixel({ y, x }) == EPixel::NONE)
+			if (_NonePixelDraw == false && GetPixel({ x, y }) == ERenderPixel::NONE)
 				continue;
 			else
-				Dest.SetPixel(UInt2(LeftTop.Y + y, LeftTop.X + x), GetPixel({ y, x }));
+				Dest.SetPixel(UInt2(GetLeftTop().X + x, GetLeftTop().Y + y), GetPixel({x, y}));
 		}
 	}
 }

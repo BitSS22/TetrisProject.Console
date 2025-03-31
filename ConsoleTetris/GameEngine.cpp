@@ -6,7 +6,6 @@
 
 CGameEngine::CGameEngine()
 {
-	Board.SetSize(Const::RenderSize);
 }
 
 CGameEngine::~CGameEngine()
@@ -15,9 +14,9 @@ CGameEngine::~CGameEngine()
 
 void CGameEngine::Render(const CImage& _Image)
 {
-	for (unsigned int y = 0; y < _Image.GetSize().Y; ++y)
+	for (unsigned int y = 0; y < _Image.GetImageSize().Y; ++y)
 	{
-		for (unsigned int x = 0; x < _Image.GetSize().X; ++x)
+		for (unsigned int x = 0; x < _Image.GetImageSize().X; ++x)
 		{
 			putwchar(static_cast<wchar_t>(_Image.GetPixel({ x, y })));
 		}
@@ -30,12 +29,13 @@ void CGameEngine::MainLoop()
 	while (true)
 	{
 		// Board Reset
-		Board.FillImage();
+		RenderBoard.FillFixel();
 
 		// Draw
+		PlayBoard.Draw(RenderBoard, true);
 
 		// Render
-		Render(Board);
+		Render(RenderBoard);
 
 		Sleep(1000);
 

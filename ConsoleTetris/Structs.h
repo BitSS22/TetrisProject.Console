@@ -16,4 +16,11 @@ public:
 	unsigned int X = 0;
 	unsigned int Y = 0;
 
+// Operator
+public:
+	UInt2 operator+ (UInt2 _Other)
+	{
+		return UInt2(X + _Other.X, Y + _Other.Y);
+	}
+
 };
