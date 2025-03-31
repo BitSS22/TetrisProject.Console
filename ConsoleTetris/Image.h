@@ -8,28 +8,36 @@ public:
 	~CImage();
 
 private:
-	std::vector<std::vector<wchar_t>> Image = {};
+	std::vector<std::vector<EPixel>> Image = {};
 	UInt2 Size = {};
+	UInt2 LeftTop = {};
 
 public:
-	inline wchar_t GetPixel(const UInt2& _Pixel) const
+	inline EPixel GetPixel(UInt2 _Pixel) const
 	{
 		return Image[_Pixel.Y][_Pixel.X];
 	}
-
-	inline void SetPixel(const UInt2& _Pixel, wchar_t _wch)
+	inline void SetPixel(UInt2 _Pixel, EPixel _wch)
 	{
 		Image[_Pixel.Y][_Pixel.X] = _wch;
 	}
-
 	UInt2 GetSize() const
 	{
 		return Size;
 	}
+	void SetLeftTop(UInt2 _LeftTop)
+	{
+		LeftTop = _LeftTop;
+	}
+	UInt2 GetLeftTop()
+	{
+		return LeftTop;
+	}
 
 public:
-	void SetImage(UInt2 _Size, wchar_t _Fill = L'0');
-	void Draw(CImage& Dest, UInt2 _LeftTop);
+	void SetSize(UInt2 _Size, EPixel _Fill = EPixel::NONE);
+	void FillImage(EPixel _Fill = EPixel::NONE);
+	void Draw(CImage& Dest, bool _NonePixelDraw = false);
 
 };
 

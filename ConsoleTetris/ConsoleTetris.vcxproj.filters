@@ -13,6 +13,9 @@
     <ClCompile Include="GameEngine.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="RenderBoard.cpp">
+      <Filter>ConsoleImage\Instance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -32,6 +35,9 @@
     </ClInclude>
     <ClInclude Include="Consts.h">
       <Filter>Datas</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderBoard.h">
+      <Filter>ConsoleImage\Instance</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

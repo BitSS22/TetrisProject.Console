@@ -3,7 +3,8 @@
 
 int main()
 {
-	CGameEngine::MainLoop();
+	CGameEngine Engine = {};
+	Engine.MainLoop();
 
 	return 0;
 }

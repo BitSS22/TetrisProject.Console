@@ -1,17 +1,21 @@
 #pragma once
 
-class CImage;
+#include "RenderBoard.h"
 
 class CGameEngine
 {
-private:
-	CGameEngine() {}
+public:
+	CGameEngine();
+	~CGameEngine();
 
 private:
-	static void Render(const CImage& _Image, UInt2 _LeftTop);
+	CRenderBoard Board = {};
+
+private:
+	void Render(const CImage& _Image);
 
 public:
-	static void MainLoop();
+	void MainLoop();
 
 };
 

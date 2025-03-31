@@ -9,7 +9,7 @@ CImage::~CImage()
 {
 }
 
-void CImage::SetImage(UInt2 _Size, wchar_t _Fill)
+void CImage::SetSize(UInt2 _Size, EPixel _Fill)
 {
 	Size = _Size;
 	Image.resize(Size.Y);
@@ -20,7 +20,27 @@ void CImage::SetImage(UInt2 _Size, wchar_t _Fill)
 	}
 }
 
-void CImage::Draw(CImage& Dest, UInt2 _LeftTop)
+void CImage::FillImage(EPixel _Fill)
 {
+	for (unsigned int y = 0; y < Image.size(); ++y)
+	{
+		for (unsigned int x = 0; x < Image[y].size(); ++x)
+		{
+			SetPixel(UInt2(y, x), _Fill);
+		}
+	}
+}
 
+void CImage::Draw(CImage& Dest, bool _NonePixelDraw)
+{
+	for (unsigned int y = 0; y < Size.Y; ++y)
+	{
+		for (unsigned int x = 0; x < Size.X; ++x)
+		{
+			if (_NonePixelDraw == false && GetPixel({ y, x }) == EPixel::NONE)
+				continue;
+			else
+				Dest.SetPixel(UInt2(LeftTop.Y + y, LeftTop.X + x), GetPixel({ y, x }));
+		}
+	}
 }
