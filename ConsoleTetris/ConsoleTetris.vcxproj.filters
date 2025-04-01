@@ -19,6 +19,15 @@
     <ClCompile Include="PlayBoard.cpp">
       <Filter>ConsoleImage\RenderInstance\ChildBoard</Filter>
     </ClCompile>
+    <ClCompile Include="Mino.cpp">
+      <Filter>ConsoleImage\RenderInstance\ChildBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="Consts.cpp">
+      <Filter>Datas</Filter>
+    </ClCompile>
+    <ClCompile Include="Enums.cpp">
+      <Filter>Datas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -45,6 +54,9 @@
     <ClInclude Include="PlayBoard.h">
       <Filter>ConsoleImage\RenderInstance\ChildBoard</Filter>
     </ClInclude>
+    <ClInclude Include="Mino.h">
+      <Filter>ConsoleImage\RenderInstance\ChildBoard</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="pch">
@@ -67,6 +79,12 @@
     </Filter>
     <Filter Include="ConsoleImage\RenderInstance\ChildBoard">
       <UniqueIdentifier>{2e7dd8fc-3fc1-46d3-bbb5-fff346fd8a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConsoleImage\RenderInstance\ChildBoard\UI">
+      <UniqueIdentifier>{5e710ecf-52a7-4fd3-af5a-2c6338aef45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Datas\GameSystem">
+      <UniqueIdentifier>{659c8145-b256-44e9-92a7-cd70e6299742}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -8,18 +8,18 @@ public:
 	virtual ~CImage();
 
 private:
-	std::vector<std::vector<ERenderPixel>> Image = {};
+	std::vector<std::vector<Pixel>> Image = {};
 	UInt2 Size = {};
 	UInt2 LeftTop = {};
 
 public:
-	inline ERenderPixel GetPixel(UInt2 _PixelLocation) const
+	inline Pixel GetPixel(UInt2 _PixelLocation) const
 	{
 		return Image[_PixelLocation.Y][_PixelLocation.X];
 	}
-	inline void SetPixel(UInt2 _PixelDest, ERenderPixel _PixelType)
+	inline void SetPixel(UInt2 _PixelDest, Pixel _Pixel)
 	{
-		Image[_PixelDest.Y][_PixelDest.X] = _PixelType;
+		Image[_PixelDest.Y][_PixelDest.X] = _Pixel;
 	}
 	UInt2 GetImageSize() const
 	{
@@ -35,8 +35,8 @@ public:
 	}
 
 public:
-	void SetSize(UInt2 _Size, ERenderPixel _PixelType = ERenderPixel::NONE);
-	void FillFixel(ERenderPixel _PixelType = ERenderPixel::NONE);
+	void SetImageSize(UInt2 _Size, Pixel _Pixel = Pixel());
+	void FillFixel(Pixel _Pixel = Pixel());
 	virtual void Draw(CImage& Dest, bool _NonePixelDraw = false);
 
 };

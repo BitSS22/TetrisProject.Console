@@ -1,5 +1,20 @@
 #pragma once
 
+struct Pixel
+{
+public:
+	Pixel() {}
+	Pixel(EShape _Shape, EColorType _Color)
+		: Shape(_Shape)
+		, Color(_Color)	{}
+	~Pixel() {}
+
+public:
+	EShape Shape = EShape::NONE;
+	EColorType Color = EColorType::GRAY;
+
+};
+
 struct UInt2
 {
 public:
@@ -9,8 +24,7 @@ public:
 		, Y(_Y) {}
 	UInt2(unsigned int _X, unsigned int _Y)
 		: X(_X)
-		, Y(_Y) {
-	}
+		, Y(_Y) {}
 
 public:
 	unsigned int X = 0;

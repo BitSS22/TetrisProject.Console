@@ -130,9 +130,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Consts.cpp" />
+    <ClCompile Include="Enums.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mino.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -147,6 +150,7 @@
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="Mino.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PlayBoard.h" />
     <ClInclude Include="RenderBoard.h" />

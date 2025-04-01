@@ -3,7 +3,7 @@
 
 CRenderBoard::CRenderBoard()
 {
-	SetSize(Const::RenderSize);
+	SetImageSize(Const::RenderSize);
 }
 
 CRenderBoard::~CRenderBoard()

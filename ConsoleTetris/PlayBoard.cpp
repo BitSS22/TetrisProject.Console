@@ -3,14 +3,14 @@
 
 CPlayBoard::CPlayBoard()
 {
-	SetSize(Const::PlayBoardImageSize);
+	SetImageSize(Const::PlayBoardImageSize);
 	SetLeftTop(Const::PlayBoardImageLeftTop);
 
-	PlayBoard.resize(Const::PlayBoardSize.Y);
+	PlayBoard.resize(PlayBoardSize.Y);
 
-	for (unsigned int i = 0; i < Const::PlayBoardSize.Y; ++i)
+	for (unsigned int i = 0; i < PlayBoardSize.Y; ++i)
 	{
-		PlayBoard[i].resize(Const::PlayBoardSize.X, EBlockColor::NONE);
+		PlayBoard[i].resize(PlayBoardSize.X, Pixel());
 	}
 }
 
@@ -20,14 +20,14 @@ CPlayBoard::~CPlayBoard()
 
 void CPlayBoard::DrawField()
 {
-	FillFixel(ERenderPixel::OUTLINE);
+	FillFixel(Pixel(EShape::OUTLINE, EColorType::GRAY));
 
 	for (unsigned int y = Const::PlayBoardOutline; y < GetImageSize().Y - Const::PlayBoardOutline; ++y)
 	{
 		for (unsigned int x = Const::PlayBoardOutline; x < GetImageSize().X - Const::PlayBoardOutline; ++x)
 		{
 			// DEBUG
-			SetPixel(UInt2(x, y), ERenderPixel::DEBUG);
+			SetPixel(UInt2(x, y), Pixel(EShape::NONE, EColorType::GRAY));
 		}
 	}
 }

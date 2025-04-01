@@ -1,14 +1,16 @@
 #pragma once
 
-enum class ERenderPixel : wchar_t
+enum class EShape : wchar_t
 {
-	NONE = L'0',
-	OUTLINE = L'q',
+	NONE = L'бр',
+	BLOCK = L'бс',
+	OUTLINE = L'в╦',
 	DEBUG = L'D',
 	END
+
 };
 
-enum class EBlockColor
+enum class EColorType
 {
 	SKY,
 	BLUE,
@@ -17,8 +19,7 @@ enum class EBlockColor
 	GREEN,
 	PURPLE,
 	RED,
-	Gray,
-	NONE,
+	GRAY,
 	END
 };
 
@@ -31,5 +32,25 @@ enum class EMinoType
 	S,
 	T,
 	Z,
+	END
+};
+
+enum class ERotateType
+{
+	NONE,
+	RIGHT,
+	FLIP,
+	LEFT,
+	END
+};
+
+ERotateType& operator++ (ERotateType& _Rotate);
+ERotateType& operator-- (ERotateType& _Rotate);
+
+enum class ESRSBlockType
+{
+	I,
+	O,
+	ELSE,
 	END
 };
