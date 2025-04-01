@@ -40,6 +40,7 @@ void CGameEngine::Draw()
 
 void CGameEngine::Input()
 {
+	Mino.Rotate(true);
 }
 
 void CGameEngine::GameReset()
@@ -61,6 +62,7 @@ void CGameEngine::MainLoop()
 
 		// Debug Wait
 		Sleep(1000);
+		
 
 		// Clear
 		system("cls");

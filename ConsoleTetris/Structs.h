@@ -36,5 +36,14 @@ public:
 	{
 		return UInt2(X + _Other.X, Y + _Other.Y);
 	}
+	UInt2 operator- (UInt2 _Other)
+	{
+		return UInt2(X - _Other.X, Y - _Other.Y);
+	}
+	UInt2 operator/ (int _Other)
+	{
+		assert(_Other);
+		return UInt2(X / _Other, Y / _Other);
+	}
 
 };

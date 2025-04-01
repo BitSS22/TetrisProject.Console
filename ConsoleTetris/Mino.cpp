@@ -4,9 +4,9 @@
 
 CMino::CMino()
 {
-	SetImageSize(Const::MinoImageSize, Pixel(EShape::OUTLINE, EColorType::GRAY));
+	SetImageSize(Const::MinoImageSize);
 	BlockSize = UInt2(5, 5);
-	SetMino(EMinoType::I);
+	SetMino(EMinoType::J);
 }
 
 CMino::~CMino()
@@ -112,15 +112,40 @@ void CMino::Draw(CImage& Dest, bool _NonePixelDraw)
 
 void CMino::Rotate(bool _Right)
 {
-	ERotateType PrevRotateType = RotateType;
+	ERotateType NewRotateType = RotateType;
 
 	if (_Right)
-		++RotateType;
+		++NewRotateType;
 	else
-		--RotateType;
+		--NewRotateType;
 
-	
-	
+	static CMino NewRotateImage = CMino();
+	NewRotateImage.SetBlockSize(BlockSize);
+	NewRotateImage.FillFixel();
 
+	int OffsetX = static_cast<int>(BlockSize.X) / 2;
+	int OffsetY = static_cast<int>(BlockSize.Y) / 2;
 
+	if (_Right)
+	{
+		for (int y = -OffsetY; y < static_cast<int>(BlockSize.Y) - OffsetY; ++y)
+		{
+			for (int x = -OffsetX; x < static_cast<int>(BlockSize.X) - OffsetX; ++x)
+			{
+				NewRotateImage.SetPixel(UInt2(x + OffsetX, y + OffsetY), GetPixel(UInt2({ y + OffsetX, -x + OffsetY })));
+			}
+		}
+	}
+	else
+	{
+		for (int y = -OffsetY; y < static_cast<int>(BlockSize.Y) - OffsetY; ++y)
+		{
+			for (int x = -OffsetX; x < static_cast<int>(BlockSize.X) - OffsetX; ++x)
+			{
+				NewRotateImage.SetPixel(UInt2(x + OffsetX, y + OffsetY), GetPixel(UInt2({ -y + OffsetX, x + OffsetY })));
+			}
+		}
+	}
+
+	NewRotateImage.Draw(*this, true);
 }
